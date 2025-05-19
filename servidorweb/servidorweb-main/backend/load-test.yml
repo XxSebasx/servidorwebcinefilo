@@ -1,0 +1,57 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 10
+scenarios:
+  - flow:
+      - get:
+          url: "/pelicula"
+      - get:
+          url: "/usuario"
+      - get:
+          url: "/comentario/1"
+      - get:
+          url: "/reportes"
+      - get:
+          url: "/peliculas/populares"
+      - get:
+          url: "/peliculas/estrenos"
+      - get:
+          url: "/peliculas/genero?genero=Accion"
+      - get:
+          url: "/peliculas/anio?inicio=2000&fin=2010"
+      - post:
+          url: "/usuario"
+          json:
+            nombre: "TestUser"
+            email: "testuser{{ $randomInt(1000,9999) }}@test.com"
+            password: "password123"
+      - post:
+          url: "/login"
+          json:
+            email: "testuser1@test.com"
+            password: "password123"
+      - post:
+          url: "/comentario"
+          json:
+            usuarioID: 1
+            peliculaID: 1
+            contenido: "Comentario de prueba"
+      - post:
+          url: "/reporte"
+          json:
+            idComentario: 1
+            idUsuario: 1
+            motivo: "Motivo de prueba"
+      - post:
+          url: "/contacto"
+          json:
+            nombre: "Cargador"
+            email: "carga{{ $randomInt(1000,9999) }}@mail.com"
+            asunto: "Carga"
+            contenido: "Mensaje de carga"
+      - delete:
+          url: "/comentario/1"
+      - delete:
+          url: "/usuario/1"
