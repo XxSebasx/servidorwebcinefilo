@@ -2,6 +2,7 @@ const { body, param, validationResult } = require("express-validator");
 const Usuario = require("../models/usuario");
 const sequelize = require("../config/database"); // Importa sequelize
 const nodemailer = require("nodemailer");
+const { Op } = require("sequelize"); // Añade esto arriba si no está
 
 async function enviarCodigo(req, res) {
   const { email, codigo } = req.body;
@@ -66,18 +67,19 @@ module.exports = {
   async getUsuario(req, res) {
     try {
       const { nombre } = req.params;
-      const usuario = await Usuario.findOne({
-        where: sequelize.where(
-          sequelize.fn("LOWER", sequelize.col("nombre")),
-          nombre.toLowerCase()
-        ),
+      const usuarios = await Usuario.findAll({
+        where: {
+          nombre: {
+            [Op.like]: `%${nombre}%`
+          }
+        }
       });
-      if (!usuario) {
+      if (!usuarios || usuarios.length === 0) {
         return res.status(404).json({
           message: "Usuario no encontrado",
         });
       }
-      res.json(usuario);
+      res.json(usuarios.length === 1 ? usuarios[0] : usuarios); // Si hay uno, devuelve el objeto; si hay varios, el array
     } catch (error) {
       console.error("Error al buscar usuario:", error);
       res.status(500).json({
@@ -211,7 +213,7 @@ module.exports = {
     }
   },
 
-  // Autenticar un usuario con validación
+  // Autenticar un usuario with validación
   async loginUser(req, res) {
     try {
       await Promise.all([
@@ -234,11 +236,17 @@ module.exports = {
         return res.status(401).json({ message: "Credenciales inválidas" });
       }
 
+      // NUEVO: Comprobar si el usuario está inactivo
+      if (usuario.estado === 'inactivo') {
+        return res.status(403).json({ message: "Cuenta inactiva" });
+      }
+
       req.session.user = {
         id: usuario.ID,
         nombre: usuario.nombre,
         email: usuario.email,
         rol: usuario.rol,
+        estado: usuario.estado // Puedes incluirlo si quieres
       };
 
       res.json({ message: "Inicio de sesión exitoso", user: req.session.user });
@@ -357,3 +365,4 @@ module.exports = {
 
   enviarCodigo,
 };
+
