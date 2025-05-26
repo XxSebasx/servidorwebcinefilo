@@ -13,7 +13,6 @@ router.post("/comentario", comentarioController.createComentario);
 router.get("/comentario/:id", comentarioController.getComentarios);
 router.delete("/comentario/:id", comentarioController.deleteComentario);
 
-
 //Pelicula
 router.post("/pelicula", peliculaController.createPelicula);
 router.get("/pelicula", peliculaController.getPeliculas);
@@ -29,6 +28,8 @@ router.get('/peliculas/estrenos', peliculaController.getPeliculasEstrenos);
 router.get('/peliculas/genero', peliculaController.getPeliculasPorGenero);
 // Obtener películas por intervalo de años
 router.get('/peliculas/anio', peliculaController.getPeliculasPorAnio);
+// Actualizar una película por ID
+router.put('/pelicula/:id', peliculaController.updatePelicula);
 
 
 //Enlace
@@ -82,3 +83,4 @@ router.get('/contacto/mensajes', contactoController.getMensajes);
 
 //Reportes
 module.exports = router;
+
