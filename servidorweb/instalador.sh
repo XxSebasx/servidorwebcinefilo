@@ -43,7 +43,7 @@ echo "⚙️ Insertando datos por defecto en la base de datos..."
 docker exec -i servidorweb-main-db-1 mysql -uroot -pexample catalogocine <<EOF
 INSERT INTO \`peliculas\` (\`ID\`, \`titulo\`, \`anio_estreno\`, \`descripcion\`, \`director\`, \`genero\`, \`duracion\`, \`portada\`, \`trailer\`, \`valoracion\`)
 VALUES
-(1, 'jurassic park', '1993-09-30 00:00:00', 'El multimillonario John Hammond hace realidad su sueño de clonar dinosaurios...', 'Steven Spielberg', 'ciencia ficcion', '2h', 'http://172.20.0.10:3000/uploads/1746101861761-997615221.jpg', 'https://www.youtube.com/embed/QWBKEmWWL38?si=L-TK9-liL7RfnVDJ', 5);
+(1, 'jurassic park', '1993-09-30 00:00:00', 'El multimillonario John Hammond hace realidad su sueño de clonar dinosaurios...', 'Steven Spielberg', 'ciencia ficcion', '2h', 'http://172.20.0.10:3000/uploads/1746101861761-997615221.jpg', 'https://www.youtube.com/embed/QWBKEmWWL38?si=L-TK9-liL7RfnVDJ', 5)
 EOF
 
 echo "✅ Aplicación desplegada y datos insertados. Accede a http://172.20.0.10:3000"
