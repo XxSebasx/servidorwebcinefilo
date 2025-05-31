@@ -32,4 +32,18 @@ fi
 cd "$DIR"
 docker compose up -d --build
 
-echo "✅ Aplicación desplegada. Accede a http://localhost:3000/"
+# Esperar a que la base de datos esté lista
+echo "⏳ Esperando que la base de datos esté lista..."
+until docker exec servidorwebcinefilo-db-1 mysqladmin ping -hlocalhost -uroot -p1234 --silent; do
+  sleep 2
+done
+
+# Ejecutar los inserts
+echo "⚙️ Insertando datos por defecto en la base de datos..."
+docker exec -i servidorwebcinefilo-db-1 mysql -uroot -p1234 cinefilo <<EOF
+INSERT INTO \`peliculas\` (\`ID\`, \`titulo\`, \`anio_estreno\`, \`descripcion\`, \`director\`, \`genero\`, \`duracion\`, \`portada\`, \`trailer\`, \`valoracion\`)
+VALUES
+(1, 'jurassic park', '1993-09-30 00:00:00', 'El multimillonario John Hammond hace realidad su sueño de clonar dinosaurios...', 'Steven Spielberg', 'ciencia ficcion', '2h', 'http://172.20.0.10:3000/uploads/1746101861761-997615221.jpg', 'https://www.youtube.com/embed/QWBKEmWWL38?si=L-TK9-liL7RfnVDJ', 5)
+EOF
+
+echo "✅ Aplicación desplegada y datos insertados. Accede a http://172.20.0.10:3000"
