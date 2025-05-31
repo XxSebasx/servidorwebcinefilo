@@ -16,7 +16,7 @@ const Pelicula = require('./models/pelicula'); // Importa el modelo Pelicula
 
 const cors = require('cors');
 app.use(cors({
-    origin: 'http://localhost:4200', // el puerto donde corre tu Angular
+    origin: ['http://localhost:4200', 'http://192.168.1.146:4200']
     credentials: true
 }));
 
