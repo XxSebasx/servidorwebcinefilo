@@ -12,12 +12,13 @@ const app = express();
 const sequelize = require('./config/database');
 require('./models/relacion');
 
+const Pelicula = require('./models/pelicula'); // Importa el modelo Pelicula
+
 const cors = require('cors');
 app.use(cors({
     origin: 'http://localhost:4200', // el puerto donde corre tu Angular
     credentials: true
 }));
-
 
 app.use(bodyParser.json());
 
@@ -47,7 +48,28 @@ sequelize.authenticate()
     .catch((error) => console.error('Error conectando a la base de datos:', error));
 
 sequelize.sync({ force: false })
-    .then(() => console.log('Modelos sincronizados con la base de datos'))
+    .then(async () => {
+        console.log('Modelos sincronizados con la base de datos');
+
+        // Insertar datos por defecto solo si no existen
+        const existe = await Pelicula.findOne({ where: { ID: 1 } });
+        if (!existe) {
+            await Pelicula.create({
+                titulo: 'jurassic park',
+                anio_estreno: new Date('1993-09-30'),
+                descripcion: 'El multimillonario John Hammond hace realidad su sueño de clonar dinosaurios...',
+                director: 'Steven Spielberg',
+                genero: 'ciencia ficcion',
+                duracion: '2h',
+                portada: 'http://172.20.0.10:3000/uploads/1746101861761-997615221.jpg',
+                trailer: 'https://www.youtube.com/embed/QWBKEmWWL38?si=L-TK9-liL7RfnVDJ',
+                valoracion: 5
+            });
+            console.log('Datos por defecto insertados');
+        } else {
+            console.log('Datos por defecto ya existen, no se insertan');
+        }
+    })
     .catch((error) => console.error('Error sincronizando modelos:', error));
 
 const PORT = process.env.PORT || 3000;
