@@ -225,7 +225,225 @@ sequelize.sync({ force: false })
                     trailer: 'https://www.youtube.com/embed/xluAtecNoDw?si=cKgeOFtBcVGDKwif',
                     valoracion: 0
                 },
-                // ... Añade aquí las otras 31 películas
+                {
+                    ID: 15,
+                    titulo: 'Godzilla',
+                    anio_estreno: new Date('2014-05-16'),
+                    descripcion: 'Ford Brody es un experto de los marines que tiene que ir a Japón para rescatar a su padre. Pronto, los dos hombres se encuentran atrapados en el caos cuando Godzilla, el Rey de los Monstruos, aparece después de pasar décadas debajo del agua.',
+                    director: 'Gareth Edwards',
+                    genero: 'ciencia ficcion',
+                    duracion: '2h 3m',
+                    portada: 'http://172.20.0.10:3000/uploads/1747436092495-89927913.jpg',
+                    trailer: 'https://www.youtube.com/embed/_MVDpmKxLNg?si=-904uLUq9TT4ko5n',
+                    valoracion: 0
+                },
+                {
+                    ID: 17,
+                    titulo: 'Doctor Strange en el multiverso de la locura',
+                    anio_estreno: new Date('2022-05-06'),
+                    descripcion: 'El Dr. Stephen Strange abre un portal al multiverso al utilizar un hechizo prohibido. Ahora, su equipo debe enfrentarse a una amenaza que podría destruirlo todo.',
+                    director: 'Sam Raimi',
+                    genero: 'accion',
+                    duracion: '2h 6m',
+                    portada: 'http://172.20.0.10:3000/uploads/1747436436082-35318671.jpg',
+                    trailer: 'https://www.youtube.com/embed/KREBGtEeW9U?si=VwH82hp35syMyLckn',
+                    valoracion: 0
+                },
+                {
+                    ID: 18,
+                    titulo: 'La La Land',
+                    anio_estreno: new Date('2017-01-13'),
+                    descripcion: 'Mia y Sebastian son dos jóvenes que quieren abrirse camino en el mundo de Hollywood. Mia es una joven aspirante a actriz que trabaja como camarera mientras acude a castings y Sebastian toca el piano en bares. Un día sus caminos se cruzan e inmediatamente ',
+                    director: 'Damien Chazelle',
+                    genero: 'romance',
+                    duracion: '2h 8m',
+                    portada: 'http://172.20.0.10:3000/uploads/1747436524191-464560880.jpg',
+                    trailer: 'https://www.youtube.com/embed/45s24h98iOc?si=-RCDTqH7WXk2iUaI',
+                    valoracion: 0
+                },
+                {
+                    ID: 19,
+                    titulo: 'Cincuenta sombras de Grey',
+                    anio_estreno: new Date('2015-02-13'),
+                    descripcion: 'Ana es una inexperta estudiante universitaria a la que encargan una entrevista con el enigmático multimillonario Christian Grey. Lo que empieza como un sencillo trabajo pronto se convierte en un romance poco convencional.',
+                    director: 'Sam Taylor-Wood',
+                    genero: 'romance',
+                    duracion: '2h 5m',
+                    portada: 'http://172.20.0.10:3000/uploads/1747436950650-185327761.jpg',
+                    trailer: 'https://www.youtube.com/embed/Y2u6m2W428g?si=PucgUp3nVkWTQdHp',
+                    valoracion: 0
+                },
+                {
+                    ID: 20,
+                    titulo: 'Terrifier 3',
+                    anio_estreno: new Date('2024-10-11'),
+                    descripcion: 'Tras sobrevivir a la masacre de Halloween perpetrada por Art, el peor asesino en serie desde Jack el Destripador, Sienna y su hermano tratan de reconstruir sus vidas. Se acercan las fiestas de Navidad e intentan celebrarlas olvidando el pasado.',
+                    director: 'Damien Leone',
+                    genero: 'terror',
+                    duracion: '2h 5m',
+                    portada: 'http://172.20.0.10:3000/uploads/1747436950650-185327761.jpg',
+                    trailer: 'https://www.youtube.com/embed/Y2u6m2W428g?si=PucgUp3nVkWTQdHp',
+                    valoracion: 0
+                },
+                {
+    ID: 21,
+    titulo: 'Mickey 17',
+    anio_estreno: new Date('2025-03-07'),
+    descripcion: 'Mickey 17, un miembro de la tripulación prescindible enviado a un planeta helado para colonizarlo, se niega a dejar que su clon de reemplazo, Mickey 18, tome su lugar.',
+    director: 'Bong Joon-ho',
+    genero: 'ciencia ficcion',
+    duracion: '2h 17m',
+    portada: 'http://172.20.0.10:3000/uploads/1747437164951-155642704.jpg',
+    trailer: 'https://www.youtube.com/embed/g41RuHSCFjE?si=5C3qP9So0HseG3Oo',
+    valoracion: 0
+},
+{
+    ID: 22,
+    titulo: 'Alien: Romulus',
+    anio_estreno: new Date('2024-08-16'),
+    descripcion: 'Los colonizadores espaciales se encuentran cara a cara con la forma de vida más aterradora del universo mientras rebuscan en las profundidades de una estación espacial abandonada.',
+    director: 'Federico Álvarez',
+    genero: 'terror',
+    duracion: '1h 59m',
+    portada: 'http://172.20.0.10:3000/uploads/1747437400444-386791518.jpg',
+    trailer: 'https://www.youtube.com/embed/5nWH2Pd-x-c?si=Lb9NnTczQu_2Y-sj',
+    valoracion: 0
+},
+{
+    ID: 23,
+    titulo: 'Spider-Man: un nuevo universo',
+    anio_estreno: new Date('2018-12-21'),
+    descripcion: 'Tras ser picado por una araña y adquirir superpoderes, el adolescente Miles Morales se dedica a llevar una doble vida en la que compagina su rutina en el instituto con patrullar la ciudad y perseguir a villanos.',
+    director: 'Peter Ramsey',
+    genero: 'accion',
+    duracion: '1h 56m',
+    portada: 'http://172.20.0.10:3000/uploads/1747437495202-651890026.jpg',
+    trailer: 'https://www.youtube.com/embed/k-8ZFn1Askc?si=0quO76GclemftZpq',
+    valoracion: 0
+},
+{
+    ID: 24,
+    titulo: 'Austin Powers in Goldmember',
+    anio_estreno: new Date('2002-07-22'),
+    descripcion: 'El agente Austin Powers se enfrenta de nuevo al doctor Maligno y a su cómplice Mini-Yo que tras escapar de una cárcel de máxima seguridad obliga a Austin a ponerse de nuevo en acción.',
+    director: 'Jay Roach',
+    genero: 'comedia',
+    duracion: '1h 38m',
+    portada: 'http://172.20.0.10:3000/uploads/1747437970334-153653727.jpg',
+    trailer: 'https://www.youtube.com/embed/SwB0ZJbwmpw?si=tK-kl8c5xAFF4Njz',
+    valoracion: 0
+},
+{
+    ID: 25,
+    titulo: 'Scary Movie',
+    anio_estreno: new Date('2000-10-31'),
+    descripcion: 'En esta parodia de las películas de terror modernas, un año después de atropellar a un hombre y deshacerse del cadáver, un grupo de adolescentes es acechado por un asesino en serie bastante inútil.',
+    director: 'Keenen Ivory Wayans',
+    genero: 'comedia',
+    duracion: '1h 28m',
+    portada: 'http://172.20.0.10:3000/uploads/1747438096473-23067417.jpg',
+    trailer: 'https://www.youtube.com/embed/SzpGYrrcJZw?si=9bddijicZF0GRZSQ',
+    valoracion: 0
+},
+{
+    ID: 26,
+    titulo: 'Ted',
+    anio_estreno: new Date('2012-08-10'),
+    descripcion: 'John Bennett y su oso de peluche Ted han sido siempre inseparables, pero su amistad se pondrá a prueba cuando Lori, la novia de John de cuatro años, pida más de su relación.',
+    director: 'Seth MacFarlane',
+    genero: 'comedia',
+    duracion: '1h 46m',
+    portada: 'http://172.20.0.10:3000/uploads/1747438233679-265334890.jpg',
+    trailer: 'https://www.youtube.com/embed/9fbo_pQvU7M?si=k-_rTFpuOI33Z5Dr',
+    valoracion: 0
+},
+{
+    ID: 27,
+    titulo: 'Thunderbolts',
+    anio_estreno: new Date('2025-05-02'),
+    descripcion: 'Thunderbolts*​ es una película de superhéroes estadounidense basada en el equipo de Marvel Comics los Thunderbolts. Producida por Marvel Studios y distribuida por Walt Disney Studios Motion Pictures, esta es la película número 36 del Universo cinematográf',
+    director: 'Jake Schreier',
+    genero: 'accion',
+    duracion: '2h 6m',
+    portada: 'http://172.20.0.10:3000/uploads/1747528220327-105311519.jpg',
+    trailer: 'https://www.youtube.com/embed/w7ovxH7MGes?si=mWFg0Puywh6QjvHj',
+    valoracion: 0
+},
+{
+    ID: 28,
+    titulo: 'Ted 2',
+    anio_estreno: new Date('2025-07-13'),
+    descripcion: 'La relación de John y Lori se ha roto, pero la de Ted y Vane va viento en popa, hasta tal punto que deciden casarse y tener hijos. Sin embargo, para ello Ted tendrá que demostrar ante un tribunal que es una persona con completa responsabilidad jurídica.',
+    director: 'Seth MacFarlane',
+    genero: 'comedia',
+    duracion: '1h 56m',
+    portada: 'http://172.20.0.10:3000/uploads/1747528881859-646025770.jpg',
+    trailer: 'https://www.youtube.com/embed/sf1okbrF1tI?si=OMV2x9vA_FHf2Cid',
+    valoracion: 0
+},
+{
+    ID: 29,
+    titulo: 'Terrifier',
+    anio_estreno: new Date('2016-03-16'),
+    descripcion: 'Cobijado por la noche de Halloween, cuando niños y adultos se disfrazan para deambular por las calles, un psicópata se pone el traje de payaso para ocultar su identidad y cometer asesinatos.',
+    director: 'Damien Leone',
+    genero: 'terror',
+    duracion: '1h 25m',
+    portada: 'http://172.20.0.10:3000/uploads/1747529185111-113811779.jpg',
+    trailer: 'https://www.youtube.com/embed/vTutJ2_E1Vo?si=BjFmQCVyqOrT3P3N',
+    valoracion: 0
+},
+{
+    ID: 30,
+    titulo: 'Terrifier 2',
+    anio_estreno: new Date('2022-10-06'),
+    descripcion: 'Resucitado por una entidad siniestra, el payaso Art regresa al condado de Miles para aterrorizar a una adolescente y a su hermano pequeño en la noche de Halloween.',
+    director: 'Damien Leone',
+    genero: 'terror',
+    duracion: '2h 18m',
+    portada: 'http://172.20.0.10:3000/uploads/1747529424939-463396213.jpg',
+    trailer: 'https://www.youtube.com/embed/GQ0_lY23VAs?si=-dupwg29CGjWcifb',
+    valoracion: 0
+},
+{
+    ID: 31,
+    titulo: 'Godzilla',
+    anio_estreno: new Date('1954-11-05'),
+    descripcion: 'Un gigante monstruo lanzallamas aterroriza a Japón después de que una bomba atómica lo despierta luego de estar dormido durante varios siglos.',
+    director: 'Ishirō Honda',
+    genero: 'ciencia ficcion',
+    duracion: '1h 36m',
+    portada: 'http://172.20.0.10:3000/uploads/1747529795028-936235787.jpg',
+    trailer: 'https://www.youtube.com/embed/IVONRrcn9TI?si=Cq9J6f2zGLpZloM7',
+    valoracion: 0
+},
+{
+    ID: 32,
+    titulo: 'La cosa',
+    anio_estreno: new Date('1982-10-08'),
+    descripcion: 'Un equipo científico de la Antártida descubre un ente extraño que podría ser letal para la humanidad, un extraterrestre que puede duplicar otras formas de vida.',
+    director: 'John Carpenter',
+    genero: 'terror',
+    duracion: '1h 49m',
+    portada: 'http://172.20.0.10:3000/uploads/1747530136292-421564568.jpg',
+    trailer: 'https://www.youtube.com/embed/2wOlQ4CUo-s?si=d7N6N9yiQwExeQYm',
+    valoracion: 0
+},
+{
+    ID: 33,
+    titulo: 'Juegos de guerra',
+    anio_estreno: new Date('1982-10-02'),
+    descripcion: 'Un joven informático, con una gran habilidad para falsificar notas, entra en una compañía de juegos de ordenador para probarlos y consigue poner en jaque al Departamento de Defensa de los Estados Unidos y provocar la III Guerra Mundial.',
+    director: 'John Badham',
+    genero: 'ciencia ficcion',
+    duracion: '1h 54m',
+    portada: 'http://172.20.0.10:3000/uploads/1747855196235-830898462.jpg',
+    trailer: 'https://www.youtube.com/embed/TQUsLAAZuhU?si=OjccL_M2NN96SpGo',
+    valoracion: 0
+}
+
+
+                
             ];
             await Pelicula.bulkCreate(peliculas);
             console.log('Películas insertadas por defecto');
